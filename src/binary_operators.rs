@@ -351,4 +351,11 @@ binary_operators! {
             i32_bool(lhs >= rhs)
         }
     ),
+    (
+        0xC5, EqualTo,
+        |_: f32, _: f32| unreachable!(), //dont use this for floats it will break
+        |lhs: i32, rhs: i32| {
+            i32_bool(lhs == rhs)
+        }
+    ),
 }
